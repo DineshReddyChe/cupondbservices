@@ -50,6 +50,7 @@ public ResponseEntity<Optional<Cupon>> cuponPath(@PathVariable(name="client") St
 	Optional<Cupon> cupon=couponService.getCoupon(client);
 	MultiValueMap<String, String> header= new LinkedMultiValueMap<>();
 	header.add("AppToken", "appToken");
+	System.out.println("update");
 	ResponseEntity<Optional<Cupon>> response = new ResponseEntity<Optional<Cupon>>(cupon, header, HttpStatus.OK);
 	return response;
 	}
